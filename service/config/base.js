@@ -6,19 +6,16 @@ const { VueLoaderPlugin } = require("vue-loader");
 module.exports = {
   profile: true,
   mode: "development", // 开发环境
-  entry: path.resolve(__dirname, './src/main.ts'), // 入口文件
+  entry: path.resolve(__dirname, '../../src/main.ts'), // 入口文件
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../../dist'),
     filename: 'js/[name].js',
   },
   resolve: {
     alias: {
-      "@": path.resolve('src')
+      "@": path.resolve(__dirname, '../../src')
     },
     extensions: ['.js', '.json', '.vue', 'jsx', '.ts', '.tsx']
-  },
-  cache: {
-    type: 'filesystem',
   },
   module: {
     // loader
@@ -29,7 +26,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        include: path.resolve(__dirname, 'src'),
+        include: path.resolve(__dirname, '../../src'),
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
@@ -75,7 +72,7 @@ module.exports = {
     port: 8083,
     historyApiFallback: true, // 支持history
     static: {
-      directory: path.resolve(__dirname, "public")
+      directory: path.resolve(__dirname, "../../public")
     }
   }
 }

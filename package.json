@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config ./webpack.config.js",
+    "build": "webpack --config ./service/build.js",
     "dev": "webpack serve --progress --config ./webpack.config.js",
     "build:speed": "webpack --config ./SpeedMeasure.js",
     "build:report": "webpack --config ./webpack.config.js --json=stats.json"
